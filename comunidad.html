@@ -62,51 +62,48 @@
 </head>
 <body>
   <header>
-    <h1>馃幃 Mi Primera PC Gamer</h1>
+    <h1>?? Mi Primera PC Gamer</h1>
     <nav>
       <a href="index.html">Inicio</a>
       <a href="juegos-rtx3050.html">Juegos en RTX 3050</a>
-      <a href="pruebas.html">Hac茅 tus pruebas</a>
+      <a href="pruebas.html">Hacé tus pruebas</a>
       <a href="netbook-gaming.html">Netbook Gaming</a>
-      <a href="optimizacion.html">Optimizaci贸n</a>
+      <a href="optimizacion.html">Optimización</a>
       <a href="dlss-fsr.html">DLSS / FSR</a>
       <a href="comunidad.html">Comunidad</a>
     </nav>
   </header>
 
   <main>
-    <h2>馃挰 Comunidad de jugadores</h2>
-    <p class="intro">Chate谩, comparte screenshots, busca team y conectate con otros gamers.</p>
+    <h2>?? Comunidad de jugadores</h2>
+    <p class="intro">Chateá, comparte screenshots, busca team y conectate con otros gamers.</p>
     <div id="talkjs-container"></div>
   </main>
 
   <footer>
-    <p>Hecho con 鉂わ笍 para gamers | miprimerapcgamer.netlify.app</p>
+    <p>Hecho con ?? para gamers | miprimerapcgamer.netlify.app</p>
   </footer>
 
-  <!-- TalkJS SDK -->
+  <!-- TalkJS SDK (SIN ESPACIOS) -->
   <script src="https://cdn.talkjs.com/talk.js/v3/talk.js"></script>
   <script>
     window.talkjsLoaded = function() {
-      // Usuario an贸nimo (煤nico por sesi贸n)
       const me = new Talk.User({
         id: "guest_" + Date.now(),
-        name: "Jugador An贸nimo",
+        name: "Jugador Anónimo",
         email: "anonimo@miprimerapcgamer.com",
-        photoUrl: "https://i.imgur.com/7Kg8o5P.png", // Avatar gamer por defecto
+        photoUrl: "https://i.imgur.com/7Kg8o5P.png", // SIN ESPACIOS
         role: "default"
       });
 
-      // Sesi贸n con tu App ID
       const session = new Talk.Session({
-        appId: "tmfGXEaK", // 
+        appId: "tmfGXEaK", // ? Tu nuevo App ID
         me: me
       });
 
-      // Muro social (inbox tipo feed)
       const inbox = session.createInbox({
         feedConversationTitle: "Comunidad de Mi Primera PC Gamer",
-        feedPlaceholder: "Compart铆 tu screenshot, pregunta o busca teammates...",
+        feedPlaceholder: "Compartí tu screenshot, pregunta o busca teammates...",
         showFeedHeader: true,
         showChatHeader: true
       });
@@ -114,13 +111,12 @@
       inbox.mount(document.getElementById("talkjs-container"));
     };
 
-    // Cargar TalkJS
     (function(t,a,l,k,j,s){
       s=a.createElement('script');s.async=1;s.src="https://cdn.talkjs.com/talk.js";a.head.appendChild(s);
       k=t.Talk={};k.ready=function(f){j.push(f)};j=[];k.load=function(m){k.appId=m;Talk.ready(function(){window.talkjsLoaded();})};
     })(window,document);
 
-    Talk.load("tmfGXEaK"); //
+    Talk.load("tmfGXEaK"); // ? Tu nuevo App ID
   </script>
 </body>
 </html>

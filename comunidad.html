@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Comunidad | Mi Primera PC Gamer</title>
+  <style>
+    body {
+      background: #0f0f15;
+      color: #e0e0ff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #0a0a10;
+      padding: 1rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      color: white;
+      font-size: 1.6rem;
+      margin: 0;
+    }
+    nav a {
+      color: #6a7bff;
+      text-decoration: none;
+      margin-left: 1.2rem;
+      font-weight: 600;
+    }
+    nav a:hover { text-decoration: underline; }
+    main {
+      max-width: 950px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+    h2 {
+      text-align: center;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+    .intro {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #ccc;
+    }
+    #talkjs-container {
+      height: 700px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #151520;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎮 Mi Primera PC Gamer</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="juegos-rtx3050.html">Juegos en RTX 3050</a>
+      <a href="pruebas.html">Hacé tus pruebas</a>
+      <a href="netbook-gaming.html">Netbook Gaming</a>
+      <a href="optimizacion.html">Optimización</a>
+      <a href="dlss-fsr.html">DLSS / FSR</a>
+      <a href="comunidad.html">Comunidad</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>💬 Comunidad de jugadores</h2>
+    <p class="intro">Chateá, comparte screenshots, busca teammates y conectate con otros gamers.</p>
+    <div id="talkjs-container"></div>
+  </main>
+
+  <footer>
+    <p>Hecho con ❤️ para gamers | miprimerapcgamer.netlify.app</p>
+  </footer>
+
+  <!-- TalkJS SDK -->
+  <script src="https://cdn.talkjs.com/talk.js/v3/talk.js"></script>
+  <script>
+    window.talkjsLoaded = function() {
+      // Usuario anónimo (único por sesión)
+      const me = new Talk.User({
+        id: "guest_" + Date.now(),
+        name: "Jugador Anónimo",
+        email: "anonimo@miprimerapcgamer.com",
+        photoUrl: "https://i.imgur.com/7Kg8o5P.png", // Avatar gamer por defecto
+        role: "default"
+      });
+
+      // Sesión con tu App ID
+      const session = new Talk.Session({
+        appId: "tmCI8QrS", // ✅ TU APP ID
+        me: me
+      });
+
+      // Muro social (inbox tipo feed)
+      const inbox = session.createInbox({
+        feedConversationTitle: "Comunidad de Mi Primera PC Gamer",
+        feedPlaceholder: "Compartí tu screenshot, pregunta o busca teammates...",
+        showFeedHeader: true,
+        showChatHeader: true
+      });
+
+      inbox.mount(document.getElementById("talkjs-container"));
+    };
+
+    // Cargar TalkJS
+    (function(t,a,l,k,j,s){
+      s=a.createElement('script');s.async=1;s.src="https://cdn.talkjs.com/talk.js";a.head.appendChild(s);
+      k=t.Talk={};k.ready=function(f){j.push(f)};j=[];k.load=function(m){k.appId=m;Talk.ready(function(){window.talkjsLoaded();})};
+    })(window,document);
+
+    Talk.load("tmCI8QrS"); // ✅ TU APP ID
+  </script>
+</body>
+</html>
